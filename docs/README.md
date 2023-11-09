@@ -21,9 +21,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Tarefa 5 - Servidor - criar sistema que vai ficar escutando o cliente.
 - [ ] Tarefa 5 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
 
-## 📫 Contribuindo para <Mine_Survival>
+## 📫 Contribuindo para Mine_Survival
 
-Para contribuir com <Mine_Survival>, siga estas etapas:
+Para contribuir com Mine_Survival, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
