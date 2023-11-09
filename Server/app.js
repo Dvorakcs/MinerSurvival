@@ -13,10 +13,8 @@ app.use(express.json());
 
 app.use(morgan('dev'));
 
-app.post('login', (req,res,next) => {
-    res.json({
-        token: ' 123456'
-    });
+app.post('/login', (req,res,next) => {
+    res.json({token: ' 123456'});
 });
 
 module.exports = app
