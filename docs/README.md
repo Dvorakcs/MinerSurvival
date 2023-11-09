@@ -1,0 +1,51 @@
+# Miner Survival
+
+![GitHub repo size](https://img.shields.io/github/repo-size/MinerSurvival/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/MinerSurvival/README-template?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/MinerSurvival/README-template?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/MinerSurvival/README-template?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/MinerSurvival/README-template?style=for-the-badge)
+
+<img src="imagem.png" alt="Exemplo imagem">
+
+> Projeto simples: uma tentativa de criar um jogo online 2D de mineração e sobrevivência.
+
+### Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [ ] Tarefa 1 - Criar ambiente Cliente
+- [ ] Tarefa 2 - Criar ambiente Servidor
+- [ ] Tarefa 3 - Cliente - Criar o sistema de loop "engine 2d"
+- [ ] Tarefa 4 - Cliente - criar o player
+- [ ] Tarefa 5 - Servidor - criar sistema que vai ficar escutando o cliente.
+- [ ] Tarefa 5 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
+
+## 📫 Contribuindo para <Mine_Survival>
+
+Para contribuir com <Mine_Survival>, siga estas etapas:
+
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <Mine_Survival> / <local>`
+5. Crie a solicitação de pull.
+
+Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## 🤝 Colaboradores
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/80294621?v=4" width="100px;" alt="Foto do Dvorakcs GitHub"/><br>
+        <sub>
+          <b>Dvorakcs (Henrique)</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
