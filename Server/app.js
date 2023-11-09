@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-
+const mongoose = require('mongoose')
 const app = express();
 
 app.use(cors({origin: process.env.CORS_ORIGIN || '*'}));

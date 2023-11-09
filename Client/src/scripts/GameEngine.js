@@ -1,12 +1,10 @@
 class GameEngine{
+    websocket = new WebSocket(`ws:localhost:3000`)
     canvas = document.getElementById('canvas') 
     ctx = this.canvas.getContext('2d')
+    
     GameObjects = {
-        Players:[
-            new GameObjects({
-                posicao:{x:10,y:10},
-            })
-        ]
+        Players:[]
     }
     constructor(){
         
@@ -15,6 +13,9 @@ class GameEngine{
 
     START(){
         //entra no loop da engine
+        this.websocket.onopen = (event) => {
+            this.websocket.send("Login")
+        }
         this.UPDATE();
     }
 
