@@ -16,7 +16,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Tarefa 1 - Criar ambiente Cliente
 - [x] Tarefa 2 - Criar ambiente Servidor
-- [ ] Tarefa 3 - Cliente - criar o player
+- [x] Tarefa 3 - Cliente - criar o player
 - [ ] Tarefa 4 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
 
 ## 📫 Contribuindo para Mine_Survival
