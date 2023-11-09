@@ -16,14 +16,12 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [ ] Tarefa 1 - Criar ambiente Cliente
 - [ ] Tarefa 2 - Criar ambiente Servidor
-- [ ] Tarefa 3 - Cliente - Criar o sistema de loop "engine 2d"
-- [ ] Tarefa 4 - Cliente - criar o player
-- [ ] Tarefa 5 - Servidor - criar sistema que vai ficar escutando o cliente.
-- [ ] Tarefa 5 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
+- [ ] Tarefa 3 - Cliente - criar o player
+- [ ] Tarefa 4 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
 
-## 📫 Contribuindo para <Mine_Survival>
+## 📫 Contribuindo para Mine_Survival
 
-Para contribuir com <Mine_Survival>, siga estas etapas:
+Para contribuir com Mine_Survival, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
