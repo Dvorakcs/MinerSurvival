@@ -15,7 +15,7 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Tarefa 1 - Criar ambiente Cliente
-- [ ] Tarefa 2 - Criar ambiente Servidor
+- [x] Tarefa 2 - Criar ambiente Servidor
 - [ ] Tarefa 3 - Cliente - criar o player
 - [ ] Tarefa 4 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
 
