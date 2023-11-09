@@ -17,7 +17,7 @@ function onConnection(ws,req) {
 
 module.exports = (server) => {
     const wss = new WebSocket.Server({
-        Server
+        server
     })
 
     wss.on('connection', onConnection);
