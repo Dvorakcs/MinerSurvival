@@ -1,10 +1,10 @@
 # Miner Survival
 
-![GitHub repo size](https://img.shields.io/github/repo-size/MinerSurvival/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/MinerSurvival/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/MinerSurvival/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/MinerSurvival/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/MinerSurvival/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Dvorakcs/MinerSurvival?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Dvorakcs/MinerSurvival?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Dvorakcs/MinerSurvival?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Dvorakcs/MinerSurvival?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Dvorakcs/MinerSurvival?style=for-the-badge)
 
 <img src="imagem.png" alt="Exemplo imagem">
 
