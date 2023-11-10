@@ -2,7 +2,7 @@ class GameObjects{
     tamanho = 16;
     constructor(config){
         this.posicao = config.posicao;
-    
+        this.id = config.id;
     }
 
     Update(UpdateEvents){
