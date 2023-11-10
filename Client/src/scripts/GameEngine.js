@@ -1,5 +1,5 @@
 class GameEngine{
-    websocket = new WebSocket(`ws:notch-early-sprint.glitch.me/`)
+    websocket = new WebSocket(`ws:miner-survival-7hcm.vercel.app/`)
 
     canvas = document.getElementById('canvas') 
     ctx = this.canvas.getContext('2d')
