@@ -1,11 +1,12 @@
 const express = require('express')
 const http = require("http")
 const webSocket = require("ws")
-
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app)
 const wss = new webSocket.Server({server})
+app.use(cors());
 
 const ACTIONS = {
     ADMIN:"Admin",
