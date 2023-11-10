@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/Dvorakcs/MinerSurvival?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/Dvorakcs/MinerSurvival?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="./GamePng.png" alt="Exemplo imagem">
 
 > Projeto simples: uma tentativa de criar um jogo online 2D de mineração e sobrevivência.
 
