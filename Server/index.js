@@ -73,7 +73,14 @@ function handlerIncomingMessage(ws,msg){
         break;
         default:
             let p = player.filter((p) => p.id == data.id)
-            console.log(p[0].posicao.x += data.Direcao.x,data.id )
+            console.log(data.Direcao)
+            if(data.Direcao.x != null){
+                p[0].posicao.x += data.Direcao.x,data.id 
+            }
+            if(data.Direcao.y != null){
+                p[0].posicao.y += data.Direcao.y,data.id 
+            }
+            console.log(p[0])
             UpdatePlayers();
             break;
     }
