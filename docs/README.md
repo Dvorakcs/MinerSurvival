@@ -24,8 +24,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 Para contribuir com Mine_Survival, siga estas etapas:
 
 1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+2. Crie um branch: `git checkout -b <Tipo/Tipo_Nbranch_NTarefa>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<#Nbranch - breve texto modificacao>'`
 4. Envie para o branch original: `git push origin <Mine_Survival> / <local>`
 5. Crie a solicitação de pull.
 
