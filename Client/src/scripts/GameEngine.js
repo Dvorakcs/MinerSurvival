@@ -1,5 +1,5 @@
 class GameEngine{
-    websocket = new WebSocket(`wss:https://notch-early-sprint.glitch.me/`)
+    websocket = new WebSocket(`wss:notch-early-sprint.glitch.me/`)
 
     canvas = document.getElementById('canvas') 
     ctx = this.canvas.getContext('2d')
