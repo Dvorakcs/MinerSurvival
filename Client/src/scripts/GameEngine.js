@@ -1,5 +1,5 @@
 class GameEngine{
-    websocket = new WebSocket(`wss:notch-early-sprint.glitch.me/`)
+    websocket = new WebSocket(`ws:localhost:3000`)
 
     canvas = document.getElementById('canvas') 
     ctx = this.canvas.getContext('2d')
@@ -46,13 +46,30 @@ class GameEngine{
     }
     setkey(event){
         debugger
+        if(event.key == "w"){
+           
+            this.websocket.send(JSON.stringify({action:"Update",
+                                                id:this.idUnic,
+                                                Direcao:{y:-1}
+        }))}
+        if(event.key == "s"){
+           
+            this.websocket.send(JSON.stringify({action:"Update",
+                                                id:this.idUnic,
+                                                Direcao:{y:1}
+        }))}
         if(event.key == "d"){
            
             this.websocket.send(JSON.stringify({action:"Update",
                                                 id:this.idUnic,
                                                 Direcao:{x:1}
-        }))
-        }
+        }))}
+        if(event.key == "a"){
+           
+            this.websocket.send(JSON.stringify({action:"Update",
+                                                id:this.idUnic,
+                                                Direcao:{x:-1}
+        }))}
     }
     START(){
         this.websocket.addEventListener("open", this.HandleSocketOpen.bind(this))
