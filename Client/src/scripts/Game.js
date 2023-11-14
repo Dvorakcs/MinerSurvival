@@ -1,10 +1,15 @@
 class Game{
     controller = new Controller()
-    gameObject = new GameObject({
-        positionX:10,
-        positionY:10,
-        isController:true
-    })
+    #background = new Image()
+    #maps = new Maps({});
+    gameObject = [
+        new Player({
+            positionX:30,
+            positionY:10,
+            isController:true
+        }),
+        
+    ]
     constructor(){
 
     }
@@ -16,11 +21,19 @@ class Game{
 
     }
     UPDATE(){
-        this.gameObject.UPDATE({
-            keyPress:this.controller.keyPress
-        })
+        this.#background.src = '/Client/src/images/tx/background.png'
+        this.#maps.UPDATE({})
+        Object.values(this.gameObject).forEach( object => {
+            object.UPDATE({
+                    keyPress:this.controller.keyPress      
+            })
+       })
     }
     DRAW(ctx){
-        this.gameObject.DRAW(ctx)
+        ctx.drawImage(this.#background,2,0)
+        this.#maps.DRAW(ctx)
+        Object.values(this.gameObject).forEach( object => {
+            object.DRAW(ctx)
+       })
     }
 }
