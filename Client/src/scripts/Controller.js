@@ -16,6 +16,5 @@ class Controller{
     }
     setKey(event,isPressed){
         this.#keys[event.key.toUpperCase()] = isPressed
-        console.log(this.#keys)
     }
 }

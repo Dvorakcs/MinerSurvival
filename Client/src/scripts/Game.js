@@ -1,7 +1,7 @@
 class Game{
     websocket = new WebSocket(`ws:localhost:3000`)
     #background = new Image()
-    id_singlePlayer = null
+    id_singlePlayer = 0
     #maps = new Maps({});
     constructor(){
         this.START()
@@ -20,6 +20,7 @@ class Game{
                     positionX:player.positionX,
                     positionY:player.positionY,
                     id_singlePlayer: player.id_singlePlayer,
+                    velocity:0.5,
                     isController:true
                  }))
             }else{
@@ -27,9 +28,9 @@ class Game{
                     positionX:player.positionX,
                     positionY:player.positionY,
                     id_singlePlayer: player.id_singlePlayer,
-                    velocity: 0.5,
+                    //velocity: 0.5,
                     //isController:true,
-                    controllerInverter:true
+                   // controllerInverter:true
                  }))
                 
             }
@@ -59,7 +60,9 @@ class Game{
 
     }
     UPDATE(){    
-        this.#maps.UPDATE()
+        this.#maps.UPDATE({
+            id_singlePlayer:this.id_singlePlayer
+        })
     }
     DRAW(ctx){
   

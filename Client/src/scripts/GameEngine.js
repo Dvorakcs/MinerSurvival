@@ -35,7 +35,7 @@ class GameEngine{
     }
 
     ClearView(){
-        this.#CTX.clearRect(0,0,500,500)
+        this.#CTX.clearRect(0,0,4000,4000)
     }
     
 }

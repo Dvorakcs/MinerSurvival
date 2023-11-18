@@ -8,6 +8,7 @@ class GameObject {
     #isController = false
     #isCollision = false
     #controllerInverter = false
+    
     constructor(config) {
         this.#tag = config.tag ?? "GameObjectNull"
         this.#positionX = config.positionX ?? 0
@@ -50,7 +51,6 @@ class GameObject {
     get isCollision() {
         return this.#isCollision;
     }
-
     START() {
 
     }
@@ -77,6 +77,8 @@ class GameObject {
                         this.#positionY -= this.#velocity * 5
                         break;
                 }
+
+
                 return
             }
         }
@@ -99,6 +101,7 @@ class GameObject {
     }
     onCollision(tiles) {
         let onCollision = false
+       
         if (tiles) {
             tiles.forEach((tile) => {
                 if (tile.isCollision) {
@@ -110,11 +113,12 @@ class GameObject {
                     ) {
 
                         onCollision = true
+                        
                     }
 
-
+                   
                 }
-
+               
             });
 
         }
