@@ -19,7 +19,6 @@ class Maps{
         
     ]
 
-
     constructor(config){
         this.id_singlePlayer = config.id_singlePlayer ?? 0
         this.#tiles = config.tiles ?? 
@@ -184,8 +183,6 @@ class Maps{
            
         })
 
-        
-        
         Object.values(this.gameObject).forEach( object => {
             object.UPDATE({
                     keyPress:this.controller.keyPress,

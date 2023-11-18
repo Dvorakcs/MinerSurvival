@@ -13,4 +13,6 @@ class Player extends GameObject{
         super(config)
         this.id_singlePlayer = config.id_singlePlayer
     }
+
+    
 }

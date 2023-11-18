@@ -65,16 +65,16 @@ class GameObject {
             if (this.onCollision(UpdateEvent.tiles)) {
                 switch (this.#direction) {
                     case 'RIGHT':
-                        this.#positionX -= this.#velocity * 5
+                        this.#positionX -= 1 
                         break;
                     case 'LEFT':
-                        this.#positionX += this.#velocity * 5
+                        this.#positionX += 1 
                         break;
                     case 'UP':
-                        this.#positionY += this.#velocity * 5
+                        this.#positionY += 1 
                         break;
                     case 'DOWN':
-                        this.#positionY -= this.#velocity * 5
+                        this.#positionY -= 1
                         break;
                 }
 

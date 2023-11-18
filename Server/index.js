@@ -9,9 +9,7 @@ const wss = new webSocket.Server({server})
 app.use(cors());
 
 const ACTIONS = {
-    ADMIN:"Admin",
-    DRAW: "Draw",
-    CLIENTE: "Client"
+   New_Player: "new player"
 }
 
 app.get("/", (req,res) => {
@@ -23,20 +21,22 @@ server.listen(3000, () => {
 })
 
 let clients = []
-let player = []
-let id = 0
+var player = []
+let id = 1
 wss.on("connection", (ws) => {   
 
     ws.id_singlePlayer = id
     clients.push(ws)
    if(player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)){
+    id += 1;
     player.push({
         id_singlePlayer : ws.id_singlePlayer,
-        positionX:250/2 * ws.id_singlePlayer,
-        positionY:250
+        positionX:32 * ws.id_singlePlayer,
+        positionY:64
     })
+    //console.log(id)
    }
-   id += 1;
+   
     //console.log(clients)
     UpdatePlayers();
 
@@ -62,21 +62,24 @@ function HandlerDraw(){
 }
 function handlerIncomingMessage(ws,msg){
     const data = JSON.parse(msg)
+    //console.log(data)
     const action = data.action
-    console.log(data)
     switch(action){
 
-        case ACTIONS.ADMIN:
-            ws.isAdmin = true;
-            console.log("addadmin")
+        case ACTIONS.New_Player:
+           
         break;
-        case ACTIONS.DRAW:
-            HandlerDraw()
-        break;
+       
         default:
-            let p = player.filter((p) => p.id == data.id)
-            console.log(p[0])
-            UpdatePlayers();
+            let p = player.filter(p => p.id_singlePlayer == data.idPlayer)
+            
+            p.forEach(p => {
+                p.positionX = data.positionX
+                p.positionY = data.positionY
+                console.log(p.positionX)
+                UpdatePlayers()
+            })
+            
             break;
     }
 }
