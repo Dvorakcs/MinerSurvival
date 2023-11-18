@@ -1,96 +1,41 @@
 class GameEngine{
-    websocket = new WebSocket(`wss:notch-early-sprint.glitch.me/`)
+    #ACTIONS = {Menu:false,Game:true};
+    #Canvas = document.getElementById('canvas');
+    #CTX = this.#Canvas.getContext('2d');
+    #menu = null;
+    #game = null
 
-    canvas = document.getElementById('canvas') 
-    ctx = this.canvas.getContext('2d')
-    idUnic = null
-    GameObjects = {
-        Players:[]
-    }
     constructor(){
-        
+        this.#menu = new Menu();
+        this.#game = new Game();
+    }
 
-    }
-    HandleSocketOpen(){
-        
-      //  this.websocket.send(JSON.stringify({action:"admin"}))
-    }
-    HandleSocketMessage(event){
-        
-        const data = JSON.parse(event.data)
-        const players =  data
-        let playerConvert = []
-        this.idUnic = players.UnicId
-        
-        Object.values(players.players).forEach((player) => {
-
-            playerConvert.push(new GameObjects({
-                posicao: player.posicao,
-                id:player.id,
-            }))
-           
-        })
-       // if(this.GameObjects.Players.filter((player) => player.id == player.id)){
-                
-       this.GameObjects.Players = playerConvert
-
-        
-    }
-    HandleSocketError(error){
-        console.error(error)
-    }
-    HandleSocketClose(error){
-        console.log("websocket fechado tentando reconectar")
-        setTimeout(this.START(),5000)
-      
-    }
-    setkey(event){
-        debugger
-        if(event.key == "w"){
-           
-            this.websocket.send(JSON.stringify({action:"Update",
-                                                id:this.idUnic,
-                                                Direcao:{y:-1}
-        }))}
-        if(event.key == "s"){
-           
-            this.websocket.send(JSON.stringify({action:"Update",
-                                                id:this.idUnic,
-                                                Direcao:{y:1}
-        }))}
-        if(event.key == "d"){
-           
-            this.websocket.send(JSON.stringify({action:"Update",
-                                                id:this.idUnic,
-                                                Direcao:{x:1}
-        }))}
-        if(event.key == "a"){
-           
-            this.websocket.send(JSON.stringify({action:"Update",
-                                                id:this.idUnic,
-                                                Direcao:{x:-1}
-        }))}
-    }
     START(){
-        this.websocket.addEventListener("open", this.HandleSocketOpen.bind(this))
-        this.websocket.addEventListener("message", this.HandleSocketMessage.bind(this))
-        this.websocket.addEventListener("error", this.HandleSocketError)
-        this.websocket.addEventListener("close", this.HandleSocketClose)
-        this.keypress = document.addEventListener('keypress', this.setkey.bind(this))
+        this.#menu.START();
+
         this.UPDATE();
     }
 
+    STOP(){
+        this.#menu.STOP();
+    }
+
     UPDATE(){
-        this.ctx.clearRect(0,0,500,500)
-        this.GameObjects.Players.forEach(players => {
-            players.Update();
-            players.Draw(this.ctx)
-        })
-        console.log(this.GameObjects.Players)
+
+        this.ClearView()
+        if(this.#ACTIONS.Menu){
+            this.#menu.UPDATE();
+            this.#menu.DRAW(this.#CTX);
+        }else{
+            this.#game.UPDATE();
+            this.#game.DRAW(this.#CTX)
+        }
+
         requestAnimationFrame(() => this.UPDATE())
     }
 
-    STOP(){
-
+    ClearView(){
+        this.#CTX.clearRect(0,0,4000,4000)
     }
+    
 }
