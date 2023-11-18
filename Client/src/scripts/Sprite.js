@@ -22,6 +22,12 @@ class Sprite{
         this.#isShadow = config.isShadow ?? false
     }
 
+    get width(){
+        return this.#width + this.#paddingX[1]
+    }
+    get height(){
+        return this.#height + this.#paddingY[1]
+    }
     set SetFrameX(value){
         this.#frameX = value;
     }

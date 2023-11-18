@@ -24,24 +24,26 @@ server.listen(3000, () => {
 
 let clients = []
 let player = []
-let count = 0
+let id = 0
 wss.on("connection", (ws) => {   
-    count++
-    ws.id = count
+
+    ws.id_singlePlayer = id
     clients.push(ws)
-   if(player.filter((player) => player.id != ws.id)){
+   if(player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)){
     player.push({
-        id : ws.id,
-        posicao:{x:20, y: 10}
+        id_singlePlayer : ws.id_singlePlayer,
+        positionX:250/2 * ws.id_singlePlayer,
+        positionY:250
     })
    }
+   id += 1;
     //console.log(clients)
     UpdatePlayers();
 
     ws.on("close", () => {
-        player = player.filter((player) => player.id !== ws.id)
-        clients = clients.filter((client) => client !== ws)
-       
+        clients = clients.filter((client) => client == ws)
+        player = player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)
+        clients = clients.filter((client) => client != ws)      
     })
     
 
@@ -73,13 +75,6 @@ function handlerIncomingMessage(ws,msg){
         break;
         default:
             let p = player.filter((p) => p.id == data.id)
-            console.log(data.Direcao)
-            if(data.Direcao.x != null){
-                p[0].posicao.x += data.Direcao.x,data.id 
-            }
-            if(data.Direcao.y != null){
-                p[0].posicao.y += data.Direcao.y,data.id 
-            }
             console.log(p[0])
             UpdatePlayers();
             break;
@@ -87,10 +82,10 @@ function handlerIncomingMessage(ws,msg){
 }
 function UpdatePlayers(){
 
-    Object.values(clients).forEach(cliente => {
+    Object.values(clients).forEach(client => {
            
-       cliente.send(JSON.stringify({
-        UnicId:cliente.id,
+        client.send(JSON.stringify({
+        id_singlePlayer:client.id_singlePlayer,
         players:player
        }))
     })
