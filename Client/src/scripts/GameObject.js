@@ -13,6 +13,7 @@ class GameObject {
         this.#tag = config.tag ?? "GameObjectNull"
         this.#positionX = config.positionX ?? 0
         this.#positionY = config.positionY ?? 0
+        this.#direction = config.direction ?? 'RIGHT'
         this.#isCollision = config.isCollision ?? false
         this.sprite = new Sprite({
             ImageObjectSrc: config.src,
@@ -47,6 +48,9 @@ class GameObject {
     }
     set velocity(value){
         this.#velocity = value
+    }
+    get Direction(){
+        return this.#direction
     }
     get isCollision() {
         return this.#isCollision;
@@ -85,8 +89,8 @@ class GameObject {
 
         if (this.verifyController()) {
             this.UpdatePosition(UpdateEvent.keyPress);
-            this.UpdateFrameAnimation()
         }
+        this.UpdateFrameAnimation()
         this.updateSpritePosition()
     }
 

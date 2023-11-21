@@ -20,6 +20,7 @@ class GameManager {
 
         this.socket.addEventListener('message', (event) => {
             this.Players = []
+            debugger
             const data = JSON.parse(event.data)
             const players =  data.players
             this.id_singlePlayer =  data.id_singlePlayer
@@ -30,13 +31,16 @@ class GameManager {
                     positionY:player.positionY,
                     id_singlePlayer: player.id_singlePlayer,
                     velocity:0.5,
-                    isController:true
+                    isController:true,
+                    direction:player.direction
                  }))
             }else{
                  this.Players.push(new Player({
                     positionX:player.positionX,
                     positionY:player.positionY,
                     id_singlePlayer: player.id_singlePlayer,
+                    direction:player.direction,
+                   
                  })) 
             }
           })        

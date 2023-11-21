@@ -32,7 +32,8 @@ wss.on("connection", (ws) => {
     player.push({
         id_singlePlayer : ws.id_singlePlayer,
         positionX:32 * ws.id_singlePlayer,
-        positionY:64
+        positionY:64,
+        direction: 'RIGHT'
     })
     //console.log(id)
    }
@@ -76,10 +77,11 @@ function handlerIncomingMessage(ws,msg){
             p.forEach(p => {
                 p.positionX = data.positionX
                 p.positionY = data.positionY
-                console.log(p.positionX)
-                UpdatePlayers()
+                p.direction = data.direction
+                console.log(p.direction)
+                
             })
-            
+            UpdatePlayers()
             break;
     }
 }
