@@ -78,7 +78,7 @@ function handlerIncomingMessage(ws,msg){
                 p.positionX = data.positionX
                 p.positionY = data.positionY
                 p.direction = data.direction
-                console.log(p.direction)
+               
                 
             })
             UpdatePlayers()

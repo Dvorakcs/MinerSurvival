@@ -18,8 +18,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Tarefa 2 - Criar ambiente Servidor
 - [x] Tarefa 3 - Cliente - criar o player
 - [x] Tarefa 4 - 7 - Servidor - criar sistema que valida o player e adiciona o no jogo retorno para cliente a posicao do plyer
-- [ ] Tarefa 6 - servidor - criar conexao com mongodb para salvar usuario e status do player
-- [ ] Tarefa 8 - Fazer Melhorias no servidor 
+- [x] Tarefa 8 - Fazer Melhorias no servidor 
+- [ ] Tarefa 11 - Criar menu do jogo 
+
 ## 📫 Contribuindo para Mine_Survival
 
 Para contribuir com Mine_Survival, siga estas etapas:
