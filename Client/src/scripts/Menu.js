@@ -1,6 +1,7 @@
 class Menu{
     constructor(){
-
+        this.width = window.innerWidth
+        this.height = window.innerHeight
     }
 
     START(){
@@ -17,7 +18,8 @@ class Menu{
        return true
     }
     backgroundFill(ctx){
-        ctx.fillStyle = '#ff71ce'
-        ctx.fillRect(0,0,500,500);
+        ctx.fillStyle = 'black'
+        
+        ctx.fillRect(0,0,this.width,this.height);
     }
 }
