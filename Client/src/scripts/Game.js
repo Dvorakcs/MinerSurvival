@@ -25,7 +25,8 @@ class Game{
             this.#gameManager.sendPlayerData({
                 idPlayer:player.id_singlePlayer,
                 positionX :player.PositionX,
-                positionY :player.PositionY
+                positionY :player.PositionY,
+                direction:player.Direction
               })
         }
        

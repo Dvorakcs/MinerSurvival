@@ -7,7 +7,155 @@ class Maps{
         velocity:2.5
     })
     controller = new Controller()
-    #tiles = []
+    #tiles = 
+    [
+        new Tile({
+            src: '/Client/src/images/tx/background.png',
+            positionX:500/2 - 32 * -2,
+            positionY:500/2 - 32,
+            controllerInverter:true,
+            isCollision:true,
+            tag:"grass10"
+        }),
+        new Tile({
+            positionX:500/2 - 32 * -2,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true,
+            tag:"grass40"
+        }),
+        new Tile({
+            positionX:500/2 - 32 * -2,
+            positionY:500/2 - 32 *0,
+            controllerInverter:true,
+            tag:"grass3"
+        }),
+        new Tile({
+            positionX:500/2 - 32 * -1,
+            positionY:500/2 - 32,
+            controllerInverter:true,
+            tag:"grass40"
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 0,
+            positionY:500/2 - 32,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32,
+            positionY:500/2 - 32,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 2,
+            positionY:500/2 - 32,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 3,
+            positionY:500/2 - 32,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 4,
+            positionY:500/2 - 32,
+            controllerInverter:true
+        }),
+
+        new Tile({
+            positionX:500/2 - 32 * -1,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 0,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 2,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 3,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 4,
+            positionY:500/2 - 32 * 2,
+            controllerInverter:true
+        }),
+
+
+        new Tile({
+            positionX:500/2 - 32 * -1,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 0,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 2,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 3,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 4,
+            positionY:500/2 - 32 * 3,
+            controllerInverter:true
+        }),
+
+
+        new Tile({
+            positionX:500/2 - 32 * -1,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 0,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 2,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 3,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        }),
+        new Tile({
+            positionX:500/2 - 32 * 4,
+            positionY:500/2 - 32 * 4,
+            controllerInverter:true
+        })
+    ]
     gameObject = [
         new Player({
             positionX:0,
@@ -21,155 +169,10 @@ class Maps{
 
     constructor(config){
         this.id_singlePlayer = config.id_singlePlayer ?? 0
-        this.#tiles = config.tiles ?? 
-        [
-            new Tile({
-                src: '/Client/src/images/tx/background.png',
-                positionX:500/2 - 32 * -2,
-                positionY:500/2 - 32,
-                controllerInverter:true,
-                isCollision:true,
-                tag:"grass40"
-            }),
-            new Tile({
-                positionX:500/2 - 32 * -2,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true,
-                tag:"grass40"
-            }),
-            new Tile({
-                positionX:500/2 - 32 * -2,
-                positionY:500/2 - 32 *0,
-                controllerInverter:true,
-                tag:"grass40"
-            }),
-            new Tile({
-                positionX:500/2 - 32 * -1,
-                positionY:500/2 - 32,
-                controllerInverter:true,
-                tag:"grass40"
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 0,
-                positionY:500/2 - 32,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32,
-                positionY:500/2 - 32,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 2,
-                positionY:500/2 - 32,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 3,
-                positionY:500/2 - 32,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 4,
-                positionY:500/2 - 32,
-                controllerInverter:true
-            }),
-
-            new Tile({
-                positionX:500/2 - 32 * -1,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 0,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 2,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 3,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 4,
-                positionY:500/2 - 32 * 2,
-                controllerInverter:true
-            }),
-
-
-            new Tile({
-                positionX:500/2 - 32 * -1,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 0,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 2,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 3,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 4,
-                positionY:500/2 - 32 * 3,
-                controllerInverter:true
-            }),
-
-
-            new Tile({
-                positionX:500/2 - 32 * -1,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 0,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 2,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 3,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            }),
-            new Tile({
-                positionX:500/2 - 32 * 4,
-                positionY:500/2 - 32 * 4,
-                controllerInverter:true
-            })
-        ]
+        this.loadTile()
+    }
+    loadTile(){
+       
     }
     START(){
 
