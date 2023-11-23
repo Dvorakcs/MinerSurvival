@@ -58,7 +58,7 @@ class Sprite{
                 this.#width,this.#height)
         }
         ctx.drawImage(this.#imageObject,
-            this.#frameX * 32,this.#frameY * 32,    
+            this.#frameX * this.#width,this.#frameY * this.#height,    
             this.#width ,this.#height,
             this.#positionX - this.#paddingX[0] ,
             this.#positionY - this.#paddingY[0],

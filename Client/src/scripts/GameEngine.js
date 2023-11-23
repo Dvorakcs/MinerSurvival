@@ -1,5 +1,5 @@
 class GameEngine{
-    #ACTIONS = {Menu:true,Game:false};
+    #ACTIONS = {Menu:false,Game:true};
     #Canvas = document.getElementById('canvas');
     #CTX = this.#Canvas.getContext('2d');
     #menu = null;
@@ -12,8 +12,8 @@ class GameEngine{
 
     START(){
         this.#menu.START();
-        this.#Canvas.width = window.innerWidth
-        this.#Canvas.height = window.innerHeight
+        this.#Canvas.width = 4000
+        this.#Canvas.height = 4000
         this.UPDATE();
     }
 

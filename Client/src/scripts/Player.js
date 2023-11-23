@@ -1,8 +1,8 @@
 class Player extends GameObject{
     id_singlePlayer = null
     constructor(config){
-        config.src = '/Client/src/images/tx/Player.png'
-        config.srcShadow = '/Client/src/images/tx/Player.png'
+        config.src = 'https://github.com/Dvorakcs/MinerSurvival/blob/main/Client/src/images/tx/Player.png?raw=true'
+        config.srcShadow = 'https://github.com/Dvorakcs/MinerSurvival/blob/main/Client/src/images/tx/Player.png?raw=true'
         config.width = 32
         config.height = 50
         config.isShadow = true

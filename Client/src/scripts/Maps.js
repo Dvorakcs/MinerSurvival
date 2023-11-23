@@ -10,7 +10,7 @@ class Maps{
     #tiles = 
     [
         new Tile({
-            src: '/Client/src/images/tx/background.png',
+            src: 'https://github.com/Dvorakcs/MinerSurvival/blob/main/Client/src/images/tx/background.png?raw=true',
             positionX:500/2 - 32 * -2,
             positionY:500/2 - 32,
             controllerInverter:true,
