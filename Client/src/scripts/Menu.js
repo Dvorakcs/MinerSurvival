@@ -1,7 +1,11 @@
 class Menu{
+    #buttonStart = null
     constructor(){
         this.width = window.innerWidth
         this.height = window.innerHeight
+        this.#buttonStart = new GameObjectButton({
+            
+        })
     }
 
     START(){

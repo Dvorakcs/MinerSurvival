@@ -28,13 +28,14 @@ wss.on("connection", (ws) => {
     ws.id_singlePlayer = id
     clients.push(ws)
    if(player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)){
-    id += 1;
+
     player.push({
         id_singlePlayer : ws.id_singlePlayer,
         positionX:32 * ws.id_singlePlayer,
         positionY:64,
         direction: 'RIGHT'
     })
+    id += 1;
     //console.log(id)
    }
    
@@ -42,8 +43,7 @@ wss.on("connection", (ws) => {
     UpdatePlayers();
 
     ws.on("close", () => {
-        clients = clients.filter((client) => client == ws)
-        player = player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)
+        player = player.filter((player) => player.id_singlePlayer != ws.id_singlePlayer)
         clients = clients.filter((client) => client != ws)      
     })
     

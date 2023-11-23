@@ -1,7 +1,7 @@
 class Tile extends GameObject {
 
     constructor(config) {
-        config.src = config.src ?? '/Client/src/images/tx/TileSetGrass.png'
+        config.src = config.src ?? 'https://github.com/Dvorakcs/MinerSurvival/blob/main/Client/src/images/tx/TileSetGrass.png?raw=true'
         config.width = 32
         config.height = 32
         config.isShadow = false
