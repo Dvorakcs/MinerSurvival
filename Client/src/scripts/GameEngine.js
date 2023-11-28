@@ -41,6 +41,7 @@ class GameEngine{
         this.#Canvas.height = 4000
         this.#ACTIONS.Menu = false
         this.#ACTIONS.Game = true
+        this.#game.START();
        }
     }
     ClearView(){
