@@ -1,4 +1,5 @@
 class Menu{
+    StartGame = false;
     #buttonStart = null
     #buttonLogin = null
     constructor(){
@@ -6,17 +7,23 @@ class Menu{
         this.height = window.innerHeight
         this.#buttonStart = new GameObjectButton({
             src: '/Client/src/images/Menu/UI_Flat_BUTTON.png',
+            text:"Login",
             positionX:10,
             positionY:10,
             width:95,
-            height:32
+            height:32,
+            positionXText: 35,
+            positionYText: 10
         })
         this.#buttonLogin = new GameObjectButton({
             src: '/Client/src/images/Menu/UI_Flat_BUTTON.png',
+            text:"Register",
             positionX:150,
             positionY:10,
             width:95,
-            height:32
+            height:32,
+            positionXText: 168,
+            positionYText: 10
         })
     }
 
@@ -27,7 +34,7 @@ class Menu{
         
     }
     UPDATE(){
-        this.#buttonStart.UPDATE({})
+       this.StartGame = this.#buttonStart.UPDATE({})
         this.#buttonLogin.UPDATE({})
     }
     DRAW(ctx){

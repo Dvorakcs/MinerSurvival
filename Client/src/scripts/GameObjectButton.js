@@ -1,19 +1,24 @@
 class GameObjectButton{
     #positionX = 0
     #positionY = 0
+    #positionXText = 0
+    #positionYText = 0
     #sprite = null
     #isClicked = false
     #EventClick = null
     #width = 0
     #height = 0
     TimeGame = 0
-
+    #text = "text null"
     #FrameTime = 0
     #Frame
 
     constructor(config){
         this.#positionX = config.positionX ?? 0
         this.#positionY = config.positionY ?? 0
+        this.#positionXText = config.positionXText ?? 0
+        this.#positionYText = config.positionYText ?? 0
+        this.#text = config.text ?? "text null"
         this.#EventClick = document.addEventListener('click', (event) => this.ClickButton(event))
         this.#width = config.width,
         this.#height = config.height,
@@ -34,8 +39,6 @@ class GameObjectButton{
     }
 
     ClickButton(event){
-        console.log(event.x)
-        console.log(event.y)
         if(this.#positionX + this.#width >= event.x && 
             this.#positionX <= event.x && 
             this.#positionY + this.#height >= event.y &&
@@ -58,7 +61,10 @@ class GameObjectButton{
         
         if(this.#isClicked){
             this.UpdateFrameAnimation()
+            return true
         }
+
+        return false
     }
     UpdateFrameAnimation() {
 
@@ -74,11 +80,16 @@ class GameObjectButton{
             this.#sprite.SetPositionYImageFrame = 32
             this.#isClicked = false
             this.#FrameTime = 0
+
         }
     }
     DRAW(ctx){
         this.#sprite.SetFrameX = 1
         this.#sprite.SetFrameY = 6
+        
         this.#sprite.DRAW(ctx)
+        ctx.fillStyle = "black"
+        ctx.font = "18px serif";
+        ctx.fillText(this.#text, this.#positionXText, this.#positionYText + 18)
     }
 }
