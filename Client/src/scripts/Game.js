@@ -1,13 +1,14 @@
 class Game{
-    #gameManager = new GameManager()
+    #gameManager = null
     #background = new Image()
     id_singlePlayer = 0
     #maps = new Maps({});
     constructor(){
-        
+       
     }
 
     START(){
+        this.#gameManager = new GameManager()
         this.#gameManager.START()
     }
     STOP(){
