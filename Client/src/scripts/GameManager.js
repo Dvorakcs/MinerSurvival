@@ -2,7 +2,7 @@ class GameManager {
     Players = []
     id_singlePlayer = 0
     constructor() {
-        this.socket = new WebSocket('wss://notch-early-sprint.glitch.me/');
+        this.socket = new WebSocket('ws:localhost:3000');
         this.setupWebSocket();
     }
     get Players(){

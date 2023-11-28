@@ -9,6 +9,8 @@ class Sprite{
     #paddingY = [0,0]
     #frameX = 0
     #frameY = 0
+    #positionXImageFrame= 0
+    #positionYImageFrame= 0
     #isShadow = false
     constructor(config){
         this.#imageObject.src = config.ImageObjectSrc
@@ -18,6 +20,8 @@ class Sprite{
         this.#paddingX = config.paddingX ?? [0,0]
         this.#paddingY = config.paddingY ?? [0,0]
         this.#width = config.width ?? 0
+        this.#positionXImageFrame = config.positionXImageFrame ?? 32
+        this.#positionYImageFrame = config.positionYImageFrame ?? 32
         this.#height = config.height ?? 0
         this.#isShadow = config.isShadow ?? false
     }
@@ -33,6 +37,18 @@ class Sprite{
     }
     set SetFrameY(value){
         this.#frameY = value;
+    }
+    get PositionXImageFrame(){
+       return this.#positionXImageFrame;
+    }
+    get PositionYImageFrame(){
+        return this.#positionYImageFrame;
+    }
+    set SetPositionXImageFrame(value){
+        this.#positionXImageFrame = value;
+    }
+    set SetPositionYImageFrame(value){
+        this.#positionYImageFrame = value;
     }
     START(){
 
@@ -58,9 +74,9 @@ class Sprite{
                 this.#width,this.#height)
         }
         ctx.drawImage(this.#imageObject,
-            this.#frameX * this.#width,this.#frameY * this.#height,    
+            this.#frameX * this.#positionXImageFrame,this.#frameY * this.#positionYImageFrame,    
             this.#width ,this.#height,
-            this.#positionX - this.#paddingX[0] ,
+            this.#positionX - this.#paddingX[0],
             this.#positionY - this.#paddingY[0],
             this.#width,this.#height)
            

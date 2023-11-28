@@ -82,7 +82,8 @@ class GameObject {
                         break;
                 }
 
-
+                this.UpdateFrameAnimation()
+                this.updateSpritePosition()
                 return
             }
         }
