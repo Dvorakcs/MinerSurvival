@@ -6,7 +6,7 @@ class Menu{
         this.width = window.innerWidth
         this.height = window.innerHeight
         this.#buttonStart = new GameObjectButton({
-            src: '/Client/src/images/Menu/UI_Flat_BUTTON.png',
+            src: 'https://raw.githubusercontent.com/Dvorakcs/MinerSurvival/main/Client/src/images/Menu/UI_Flat_BUTTON.png',
             text:"Login",
             positionX:10,
             positionY:10,
@@ -16,7 +16,7 @@ class Menu{
             positionYText: 10
         })
         this.#buttonLogin = new GameObjectButton({
-            src: '/Client/src/images/Menu/UI_Flat_BUTTON.png',
+            src: 'https://raw.githubusercontent.com/Dvorakcs/MinerSurvival/main/Client/src/images/Menu/UI_Flat_BUTTON.png',
             text:"Register",
             positionX:150,
             positionY:10,
