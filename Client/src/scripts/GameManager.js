@@ -3,7 +3,7 @@ class GameManager {
     id_singlePlayer = 0
     constructor() {
         this.socket = new WebSocket('ws:localhost:3000');
-        this.setupWebSocket();
+        
     }
     get Players(){
         return this.Players
@@ -12,6 +12,7 @@ class GameManager {
         return this.id_singlePlayer
     }
     setupWebSocket() {
+        debugger
         this.socket.addEventListener('open', (event) => {
             console.log('Conexão WebSocket estabelecida.');
             
@@ -58,7 +59,7 @@ class GameManager {
     }
 
     START(){
-      
+        this.setupWebSocket();
     }
     sendPlayerData(playerData) {
         if (this.socket.readyState === WebSocket.OPEN) {

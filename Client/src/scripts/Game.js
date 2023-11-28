@@ -4,11 +4,11 @@ class Game{
     id_singlePlayer = 0
     #maps = new Maps({});
     constructor(){
-        this.START()
+        
     }
 
     START(){
-
+        this.#gameManager.START()
     }
     STOP(){
 
