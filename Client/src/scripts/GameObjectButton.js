@@ -12,7 +12,7 @@ class GameObjectButton{
     #text = "text null"
     #FrameTime = 0
     #Frame
-
+    #endAnimation = false
     constructor(config){
         this.#positionX = config.positionX ?? 0
         this.#positionY = config.positionY ?? 0
@@ -61,7 +61,7 @@ class GameObjectButton{
         
         if(this.#isClicked){
             this.UpdateFrameAnimation()
-            return true
+            return this.#endAnimation
         }
 
         return false
@@ -80,6 +80,7 @@ class GameObjectButton{
             this.#sprite.SetPositionYImageFrame = 32
             this.#isClicked = false
             this.#FrameTime = 0
+            this.#endAnimation = true
 
         }
     }
