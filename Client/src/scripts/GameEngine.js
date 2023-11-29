@@ -27,7 +27,7 @@ class GameEngine{
         if(this.#ACTIONS.Menu){
             this.#menu.UPDATE();
             this.#menu.DRAW(this.#CTX);
-            this.StartGame(this.#menu.StartGame);
+            this.StartGame(this.#menu.StartGame, this.#menu.PlayerName);
         }else{
             this.#game.UPDATE();
             this.#game.DRAW(this.#CTX)
@@ -35,13 +35,13 @@ class GameEngine{
 
         requestAnimationFrame(() => this.UPDATE())
     }
-    StartGame(isStart){
+    StartGame(isStart,playerName){
        if(isStart){
         this.#Canvas.width = 4000
         this.#Canvas.height = 4000
         this.#ACTIONS.Menu = false
         this.#ACTIONS.Game = true
-        this.#game.START();
+        this.#game.START(playerName);
        }
     }
     ClearView(){

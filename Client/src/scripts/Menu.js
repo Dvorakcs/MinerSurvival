@@ -1,7 +1,9 @@
 class Menu{
     StartGame = false;
+    PlayerName = '';
     #buttonStart = null
     #buttonLogin = null
+    #InputName = null
     constructor(){
         this.width = window.innerWidth
         this.height = window.innerHeight
@@ -15,15 +17,12 @@ class Menu{
             positionXText: 35,
             positionYText: 10
         })
-        this.#buttonLogin = new GameObjectButton({
-            src: 'https://raw.githubusercontent.com/Dvorakcs/MinerSurvival/main/Client/src/images/Menu/UI_Flat_BUTTON.png',
-            text:"Register",
+        this.#InputName = new GameObjectInput({
             positionX:150,
-            positionY:10,
-            width:95,
-            height:32,
-            positionXText: 168,
-            positionYText: 10
+            positionY:15,
+            width:120,
+            height:22,
+            placeholder:"name"
         })
     }
 
@@ -35,12 +34,13 @@ class Menu{
     }
     UPDATE(){
        this.StartGame = this.#buttonStart.UPDATE({})
-        this.#buttonLogin.UPDATE({})
+        this.PlayerName = this.#InputName.UPDATE({})
+       // console.log(this.PlayerName)
     }
     DRAW(ctx){
         this.backgroundFill(ctx)
-        this.#buttonStart.DRAW(ctx)
-        this.#buttonLogin.DRAW(ctx)
+        this.#buttonStart.DRAW(ctx);
+        this.#InputName.DRAW(ctx);
        return true
     }
     backgroundFill(ctx){
