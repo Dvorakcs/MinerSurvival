@@ -7,9 +7,9 @@ class Game{
        
     }
 
-    START(){
+    START(playerName){
         this.#gameManager = new GameManager()
-        this.#gameManager.START()
+        this.#gameManager.START(playerName)
     }
     STOP(){
 
@@ -19,7 +19,7 @@ class Game{
         if(this.#gameManager.Players.length > 0){
             this.#maps.gameObject = this.#gameManager.Players
             this.#maps.UPDATE({
-                id_singlePlayer:this.#gameManager.Id_singlePlayer
+                id_singlePlayer:this.#gameManager.Id_singlePlayer,
             })
             
             const player = this.#maps.gameObject.filter(player => player.id_singlePlayer == this.#gameManager.Id_singlePlayer)[0]

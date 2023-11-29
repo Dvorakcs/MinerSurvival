@@ -8,7 +8,7 @@ class GameObject {
     #isController = false
     #isCollision = false
     #controllerInverter = false
-    
+    #playerName = ""
     constructor(config) {
         this.#tag = config.tag ?? "GameObjectNull"
         this.#positionX = config.positionX ?? 0
@@ -29,6 +29,7 @@ class GameObject {
         this.#isController = config.isController ?? false
         this.#controllerInverter = config.controllerInverter ?? false
         this.#velocity = config.velocity ?? 0.5
+        this.#playerName = config.playerName
 
     }
     get Tag() {
@@ -196,6 +197,10 @@ class GameObject {
             return
         }
         this.sprite.DRAW(ctx)
+        if(this.#tag == "player"){
+            ctx.fillText(this.#playerName, this.#positionX- 10, this.#positionY - 50)
+            this.sprite.DRAW(ctx)
+        }
     }
 
 }

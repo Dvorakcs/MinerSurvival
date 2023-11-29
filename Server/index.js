@@ -9,39 +9,27 @@ const wss = new webSocket.Server({server})
 app.use(cors());
 
 const ACTIONS = {
-   New_Player: "new player"
+   New_Player: "new player",
+   CreatePlayer: "CreatePlayer",
+   UpdatePosition: "UpdatePosition"
 }
 
 app.get("/", (req,res) => {
-    res.send("Entrou...")
+    res.send("Server WebSocket Initialize...")
 })
 
 server.listen(3000, () => {
-    console.log("servidor iniciado porta:" + 3000)
+    console.log("Server WebSocket Initialize...  PORT:" + 3000)
 })
 
 let clients = []
 var player = []
 let id = 1
 wss.on("connection", (ws) => {   
-
+    id++;
     ws.id_singlePlayer = id
-    clients.push(ws)
-   if(player.filter((player) => player.id_singlePlayer != clients.id_singlePlayer)){
-
-    player.push({
-        id_singlePlayer : ws.id_singlePlayer,
-        positionX:32 * ws.id_singlePlayer,
-        positionY:64,
-        direction: 'RIGHT'
-    })
-    id += 1;
-    //console.log(id)
-   }
-   
-    //console.log(clients)
-    UpdatePlayers();
-
+    UpdateId(ws);
+    
     ws.on("close", () => {
         player = player.filter((player) => player.id_singlePlayer != ws.id_singlePlayer)
         clients = clients.filter((client) => client != ws)      
@@ -51,26 +39,25 @@ wss.on("connection", (ws) => {
     ws.on("message",handlerIncomingMessage.bind(null,ws))
     
 })
-
-function UpdatePosicaoPlayer(){
-    console.log("Posicao atualizada")
-}
-function HandlerDraw(){
-    const  playersAll = Object(clients)
-    playersAll.forEach((player) => {
-        player.send(playersAll)
-    })
-}
 function handlerIncomingMessage(ws,msg){
     const data = JSON.parse(msg)
-    //console.log(data)
-    const action = data.action
+    const action = data.actions
+    
     switch(action){
-
-        case ACTIONS.New_Player:
-           
+        case ACTIONS.CreatePlayer:
+            const players = data.player 
+             player.push({
+                 playerName:players,
+                 id_singlePlayer : ws.id_singlePlayer,
+                 positionX:32 * ws.id_singlePlayer,
+                 positionY:64,
+                 direction: 'RIGHT'
+             })
+             UpdatePlayers()
         break;
-       
+        case ACTIONS.UpdatePosition:
+
+        break;
         default:
             let p = player.filter(p => p.id_singlePlayer == data.idPlayer)
             
@@ -90,8 +77,17 @@ function UpdatePlayers(){
     Object.values(clients).forEach(client => {
            
         client.send(JSON.stringify({
+        actions:ACTIONS.UpdatePosition,
         id_singlePlayer:client.id_singlePlayer,
         players:player
        }))
     })
+}
+function UpdateId(ws){
+    clients.push(ws)
+    ws.send(JSON.stringify({
+        actions:ACTIONS.CreatePlayer,
+        id_singlePlayer:ws.id_singlePlayer
+    }))
+
 }
